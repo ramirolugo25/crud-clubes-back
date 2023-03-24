@@ -1,5 +1,6 @@
 const fs = require('fs');
 const express = require('express');
+const cors = require('cors')
 // const exphbs = require('express-handlebars');
 // const multer = require('multer');
 
@@ -39,7 +40,7 @@ const PORT = 8080;
 const app = express();
 // const hbs = exphbs.create();
 
-
+app.use(cors());
 app.use(express.static(`${__dirname}/uploads`));
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: true }));
