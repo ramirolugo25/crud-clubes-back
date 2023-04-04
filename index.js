@@ -100,7 +100,7 @@ app.post('/team/add', upload.single('image'), (req, res) => {
             website,
             founded,
             venue,
-            crestUrl: `${BASEURL}${req.file.filename}`,
+            crestUrl: `${BASEURL}images/${req.file.filename}`,
         }
         dataTeams.push(newTeam);
         fs.writeFileSync('data/teams.db.json', JSON.stringify(dataTeams));
