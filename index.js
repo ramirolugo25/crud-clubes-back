@@ -61,7 +61,7 @@ app.put('/', (req, res) => {
     const resetTeams = JSON.parse(fs.readFileSync('./data/teams.json'));
     fs.writeFileSync('./data/teams.db.json', JSON.stringify(resetTeams));
 
-    const folderPath = 'crud-clubes-back/uploads/images';
+    const folderPath = './uploads/images';
     const fileNames = fs.readdirSync(folderPath);
     for (const file of fileNames) {
         fs.unlinkSync(`${folderPath}/${file}`);
